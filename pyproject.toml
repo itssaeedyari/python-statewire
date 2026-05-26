@@ -1,0 +1,100 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python-statewire"
+version = "1.0.0a0"
+description = "A flexible, framework-agnostic state machine for Python — no dependencies required"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E.*"]
+requires-python = ">=3.10"
+authors = [{ name = "Saeed Yari", email = "contact@saeedyari.ir" }]
+maintainers = [{ name = "Saeed Yari", email = "contact@saeedyari.ir" }]
+keywords = ["state-machine", "fsm", "finite-state-machine", "state-management", "state-pattern", "state-transitions", "event-driven", "state-handler", "transition", "python-fsm", "state-engine", ]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/saeedyari/python-statewire"
+Repository = "https://github.com/saeedyari/python-statewire"
+Issues = "https://github.com/saeedyari/python-statewire"
+Documentation = "https://github.com/saeedyari/python-statewire#readme"
+
+[project.optional-dependencies]
+dev = [
+  "build",
+  "twine",
+  "pytest>=7.0",
+  "pytest-cov",
+  "ruff>=0.4.0",
+  "mypy>=1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/python_statewire"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/", "tests/", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+[tool.coverage.run]
+source = ["src/python_statewire"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 80
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+  "E", "F", "I", "UP", "B", "SIM",
+  "TID252",
+  "C4",
+  "ARG",
+  "PGH",
+]
+
+ignore = [
+  "E501",
+  "B008",
+  "SIM105",
+]
+fixable = ["ALL"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["python_statewire"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+mypy_path = "src"
+files = ["src/python_statewire", "tests"]
+ignore_missing_imports = true
