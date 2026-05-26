@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from python_statewire.types import Event, Guard, Hook, State
+from statewire.types import Event, Guard, Hook, State
 
 
 @dataclass(frozen=True)

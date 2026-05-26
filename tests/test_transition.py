@@ -1,6 +1,6 @@
 from enum import Enum
 
-from python_statewire.transition import Transition
+from statewire.transition import Transition
 
 
 class State(str, Enum):

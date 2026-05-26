@@ -16,11 +16,11 @@ testf PATTERN:
 
 # Run tests with coverage (terminal)
 cov:
-    pytest --cov=python_statewire --cov-report=term-missing tests/
+    pytest --cov=statewire --cov-report=term-missing tests/
 
 # Run tests with HTML coverage report
 cov-html:
-    pytest --cov=python_statewire --cov-report=html tests/
+    pytest --cov=statewire --cov-report=html tests/
     @echo "Open htmlcov/index.html to view report"
 
 # Lint with ruff

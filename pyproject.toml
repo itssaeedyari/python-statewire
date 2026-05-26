@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "python-statewire"
+name = "statewire"
 version = "1.0.0a0"
 description = "A flexible, framework-agnostic state machine for Python — no dependencies required"
 readme = "README.md"
@@ -30,10 +30,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/saeedyari/python-statewire"
-Repository = "https://github.com/saeedyari/python-statewire"
-Issues = "https://github.com/saeedyari/python-statewire"
-Documentation = "https://github.com/saeedyari/python-statewire#readme"
+Homepage = "https://github.com/saeedyari/statewire"
+Repository = "https://github.com/saeedyari/statewire"
+Issues = "https://github.com/saeedyari/statewire"
+Documentation = "https://github.com/saeedyari/statewire#readme"
 
 [project.optional-dependencies]
 dev = [
@@ -46,7 +46,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/python_statewire"]
+packages = ["src/statewire"]
 
 [tool.hatch.build.targets.sdist]
 include = ["src/", "tests/", "README.md", "LICENSE"]
@@ -56,7 +56,7 @@ testpaths = ["tests"]
 addopts = "-ra -q"
 
 [tool.coverage.run]
-source = ["src/python_statewire"]
+source = ["src/statewire"]
 branch = true
 
 [tool.coverage.report]
@@ -85,7 +85,7 @@ ignore = [
 fixable = ["ALL"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["python_statewire"]
+known-first-party = ["statewire"]
 section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
 
 [tool.ruff.format]
@@ -96,5 +96,5 @@ indent-style = "space"
 python_version = "3.10"
 strict = true
 mypy_path = "src"
-files = ["src/python_statewire", "tests"]
+files = ["src/statewire", "tests"]
 ignore_missing_imports = true
