@@ -5,6 +5,8 @@ from statewire.types import Event, Guard, Hook, State
 
 @dataclass(frozen=True)
 class Transition:
+    """Represents a state transition triggered by an event."""
+
     source: State
     event: Event
     target: State
